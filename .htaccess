@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.stackedstate\.com$
+RewriteRule ^(.*)$ https://stackedstate.com/$1 [R=301,L]
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://stackedstate.com/$1 [R=301,L]
+
+RewriteEngine on
+RewriteCond %{THE_REQUEST} ^.*/index.php
+RewriteRule ^(.*)index.html$ https://stackedstate.com/$1 [R=301,L]
